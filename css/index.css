@@ -1,0 +1,206 @@
+/* 引入字型 Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --main-deep-1: #8D98B2;
+    --main-deep-2: #576585;
+    --main-deep-3: #263559;
+    --main-light-1: #FFFAF3;
+    --main-light-2: #F4E8DB;
+    --jump-1: #FF7777;
+    --jump-2: #F6E39F;
+    --jump-3: #FFC700;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+}
+
+/* 首頁的header */
+.header {
+    background-color: var(--main-deep-1);
+    color: var(--white);
+    padding: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.header .nav-link {
+    color: var(--white);
+}
+
+/* 首頁的主視覺畫面 */
+.index_main {
+    background-color: var(--main-deep-2);
+    height: 80vh;
+}
+
+.index_main h1,
+.index_main h2 {
+    color: var(--main-light-1);
+}
+
+.index_main h1>span {
+    color: var(--jump-3);
+}
+
+/* nav 底線hover效果 */
+.nav-item {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--jump-1);
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::before {
+    width: 100%;
+}
+
+/* project區域 */
+.project>h3 {
+    color: var(--main-deep-3);
+}
+
+.project-item>div {
+    max-width: 620px;
+}
+
+.preview-img {
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 1s;
+    cursor: pointer;
+    height: 400px;
+
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+.preview-img img {
+    height: 100%;
+    object-fit: cover
+}
+
+.description {
+    color: var(--main-deep-2);
+}
+
+/* project 預覽圖hover效果 */
+.overlay_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.preview-img:hover .overlay_hover {
+    opacity: 1;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid var(--main-light-1);
+}
+
+/* project 預覽圖 click 效果 */
+.overlay_click {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/universe.jpeg);
+    background-size: contain;
+    display: flex;
+    padding-top: 30px;
+    padding-left: 40px;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.fade-in {
+    top: 0;
+    animation: fadeIn 1s;
+}
+
+.fade-out {
+    top: 100%;
+    animation: fadeOut 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
