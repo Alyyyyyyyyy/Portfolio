@@ -33,7 +33,7 @@ const project = Vue.createApp({
           url: "https://github.com/Alyyyyyyyyy/foomosa",
           desc: "問答小遊戲",
           img: "img/quiz_game.jpg",
-          accomplishments: ["只有使用 CSS 及 JavaScript 作為練習"],
+          accomplishments: ["使用 CSS 及 JavaScript 作為切版練習"],
           showOverlay: false,
           initialOverlay: false,
         },
