@@ -244,3 +244,15 @@ p {
     width: 100%;
     background-color: var(--jump-3);
 }
+
+/* 頁尾 */
+footer {
+    background-color: var(--main-deep-2);
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    color: var(--main-light-1);
+}
