@@ -15,7 +15,7 @@ const project = Vue.createApp({
       projects: [
         {
           title: "Foomosa",
-          gitHubUrl: "https://github.com/Alyyyyyyyyy/foomosa",
+          gitHubUrl: "https://github.com/aly-ning/foomosa",
           pageUrl: undefined,
           desc: "臺中美食資訊整合平台，提供餐廳營業資訊及比較店家配合之外送平台餐點價格，合作店家有專屬後臺可以更新菜單、優惠資訊，獲得商業分析",
           img: "img/foomosa.jpg",
@@ -31,8 +31,8 @@ const project = Vue.createApp({
         },
         {
           title: "Quiz Game",
-          gitHubUrl: "https://github.com/Alyyyyyyyyy/quiz-game",
-          pageUrl: "https://alyyyyyyyyy.github.io/quiz-game/",
+          gitHubUrl: "https://github.com/aly-ning/quiz-game",
+          pageUrl: "https://aly-ning.github.io/quiz-game/",
           desc: "問答小遊戲",
           img: "img/quiz_game.jpg",
           accomplishments: ["使用 CSS 及 JavaScript 作為切版練習"],

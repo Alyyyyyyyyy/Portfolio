@@ -1,0 +1,12 @@
+body {
+    background-color: #263559;
+    text-align: center;
+}
+
+#pdf-container {
+    width: 70%;
+    height: auto;
+    margin: auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
