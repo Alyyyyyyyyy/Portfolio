@@ -1,6 +1,9 @@
+/* 引入字型 Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
 body {
-    background-color: #263559;
     text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 #pdf-container {
@@ -9,4 +12,22 @@ body {
     margin: auto;
     /* display: flex; */
     /* flex-direction: column; */
+}
+
+.resume {
+    background-color: #263559;
+}
+
+.resume>h2 {
+    color: var(--main-light-1);
+    font-weight: 500;
+}
+
+.resume>.btn {
+    font-size: 20px;
+}
+
+.resume>.btn>a {
+    font-size: 20px;
+    color: var(--main-light-1);
 }
