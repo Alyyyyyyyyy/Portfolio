@@ -15,7 +15,8 @@ const project = Vue.createApp({
       projects: [
         {
           title: "Foomosa",
-          url: "https://github.com/Alyyyyyyyyy/foomosa",
+          gitHubUrl: "https://github.com/Alyyyyyyyyy/foomosa",
+          pageUrl: undefined,
           desc: "臺中美食資訊整合平台，提供餐廳營業資訊及比較店家配合之外送平台餐點價格，合作店家有專屬後臺可以更新菜單、優惠資訊，獲得商業分析",
           img: "img/foomosa.jpg",
           accomplishments: [
@@ -30,7 +31,8 @@ const project = Vue.createApp({
         },
         {
           title: "Quiz Game",
-          url: "https://github.com/Alyyyyyyyyy/quiz-game",
+          gitHubUrl: "https://github.com/Alyyyyyyyyy/quiz-game",
+          pageUrl: "https://alyyyyyyyyy.github.io/quiz-game/",
           desc: "問答小遊戲",
           img: "img/quiz_game.jpg",
           accomplishments: ["使用 CSS 及 JavaScript 作為切版練習"],
@@ -43,7 +45,10 @@ const project = Vue.createApp({
   methods: {
     toggleOverlay(index) {
       this.projects[index].showOverlay = !this.projects[index].showOverlay;
-      this.projects[index].initialOverlay = true;
+      this.projects[index].initialOverlay = true; // initialOverlay: 防止fade out的動畫在一開始載入頁面時執行
+    },
+    goToGitHub(url) {
+      window.location.href = url; // 導到 github
     },
   },
 }).mount(".project-list");
