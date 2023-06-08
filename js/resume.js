@@ -1,6 +1,6 @@
 // 透過 pdf.js 渲染 pdf 檔在頁面上 (開始)
 // 獲取 PDF 文件的 URL
-const pdfUrl = "file/resume.pdf";
+const pdfUrl = "../file/resume.pdf";
 
 // 獲取容器元素
 const container = document.getElementById("pdf-container");
