@@ -61,7 +61,7 @@ const skill = Vue.createApp({
         {
           title: "Front-End Skills",
           logo: {
-            JaveScript: "../img/logo_js.png",
+            JaveScript: "img/logo_js.png",
             Vue: "../img/logo_vue.png",
             jQuery: "../img/logo_jquery.png",
             Boostrap: "../img/logo_boostrap.png",
