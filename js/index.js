@@ -8,7 +8,7 @@ new Typed("#typed", {
   loop: true,
 });
 
-// project area
+// projects area
 const project = Vue.createApp({
   data() {
     return {
@@ -35,7 +35,7 @@ const project = Vue.createApp({
           pageUrl: "https://aly-ning.github.io/quiz-game/",
           desc: "問答小遊戲",
           img: "img/quiz_game.jpg",
-          accomplishments: ["使用 CSS 及 JavaScript 作為切版練習"],
+          accomplishments: ["使用 CSS 及 JavaScript 作為切版練習", "RWD"],
           showOverlay: false,
           initialOverlay: false,
         },
@@ -52,3 +52,53 @@ const project = Vue.createApp({
     },
   },
 }).mount(".project-list");
+
+// skills area
+const skill = Vue.createApp({
+  data() {
+    return {
+      skills: [
+        {
+          title: "Front-End Skills",
+          logo: {
+            JaveScript: "../img/logo_js.png",
+            Vue: "../img/logo_vue.png",
+            jQuery: "../img/logo_jquery.png",
+            Boostrap: "../img/logo_boostrap.png",
+          },
+        },
+        {
+          title: "Back-End Skills",
+          logo: {
+            Nodejs: "../img/logo_nodejs.png",
+            Express: "../img/logo_express.png",
+            MySQL: "../img/logo_mysql.png",
+          },
+        },
+        {
+          title: "Tools & Others",
+          logo: {
+            "Visual Studio Code": "../img/logo_vc.png",
+            GitHub: "../img/logo_github.png",
+            "Source Tree": "../img/logo_sourcetree.png",
+            Figma: "../img/logo_figma.png",
+            POSTMAN: "../img/logo_postman.png",
+            MAMP: "../img/logo_mamp.png",
+          },
+        },
+      ],
+    };
+  },
+  methods: {
+    // 啟用 tooltip
+    initTooltips() {
+      const tooltips = document.querySelectorAll('[data-mdb-toggle="tooltip"]');
+      tooltips.forEach((tooltip) => {
+        new mdb.Tooltip(tooltip);
+      });
+    },
+  },
+  mounted() {
+    this.initTooltips();
+  },
+}).mount("#vueCarouselInner");

@@ -15,6 +15,7 @@
 
   <!-- 引用 MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdb@6.3.1/dist/mdb.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"></script>
 
   <!-- 引用 boostrap icons -->
@@ -34,7 +35,7 @@
       <h3>Aly ‧ Portfolio</h3>
       <div class="navbar-nav flex-row">
         <div class="nav-item me-5">
-          <a class="nav-link" href="/index.html">Home</a>
+          <a class="nav-link" href="../index.html">Home</a>
           <div class="btn_underline"></div>
         </div>
 
@@ -52,45 +53,90 @@
       <h2><span id="typed"></span></h2>
     </div>
 
-    <!-- project -->
-    <div class="d-flex justify-content-center p-5 project flex-column" id="project">
-      <h3 class="text-center">Project</h3>
-      <div class="project-list d-flex align-items-center flex-column">
-        <div class="project-item mt-5 d-flex justify-content-center w-75" v-for="(project, index) in projects"
-          :key="index">
-          <div class="preview-img w-50 shadow ripple" data-mdb-ripple-color="light" data-mdb-ripple-duration="1000ms"
-            @click="toggleOverlay(index)">
-            <img :src="project.img" alt="" class="img-fluid" />
-            <div class="overlay_hover">
-              <h4 class="text px-5 py-3">Highlight</h4>
-            </div>
-            <div class="overlay_click text-white" v-show="project.initialOverlay"
-              :class="{ 'fade-in': project.showOverlay}, {'fade-out': !(project.showOverlay)}">
-              <h5>Achievement</h5>
-              <ul>
-                <li v-for="(item, index) in project.accomplishments">
-                  {{item}}
-                </li>
-              </ul>
+    <!-- skills -->
+    <div id="skillCarousel" class="carousel slide" data-mdb-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-mdb-target="#skillCarousel" data-mdb-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-mdb-target="#skillCarousel" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-mdb-target="#skillCarousel" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner" id="vueCarouselInner">
+        <div class="carousel-item" v-for="(skill, index) in skills" :class="{'active':!index}">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{skill.title}}</h3>
+            <div class="d-flex justify-content-center mt-5">
+              <div class="skillsLogo mx-3" v-for="(src, logoTitle) in skill.logo" :key="logoTitle"
+                data-mdb-toggle="tooltip" data-mdb-placement="bottom" data-mdb-html="true" :title="logoTitle">
+                <img :src="src" alt="" class="">
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="description w-50 p-5">
-            <h4>{{project.title}}</h4>
-            <p>{{project.desc}}</p>
-            <button type="button" class="btn btn-rounded me-3 mt-5" @click="goToGitHub(project.gitHubUrl)">
-              <i class="bi bi-github"></i>
-              <span class="ms-2">GitHub</span>
-            </button>
-            <button type="button" class="btn btn-rounded me-3" @click="goToGitHub(project.pageUrl)"
-              :disabled="!project.pageUrl">
-              <i class="bi bi-house-door-fill"></i>
-              <span class="ms-2">Page</span>
-            </button>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-mdb-target="#skillCarousel" data-mdb-slide="prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next custom-next-icon" type="button" data-mdb-target="#skillCarousel"
+        data-mdb-slide="next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 0 0 .708L10.293 8l-5.647 5.646a.5.5 0 1 0 .708.708l6-6a.5.5 0 0 0 0-.708l-6-6a.5.5 0 0 0-.708 0z" />
+        </svg>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- project -->
+  <div class="d-flex justify-content-center p-5 project flex-column" id="project">
+    <h3 class="text-center">Project</h3>
+    <h6 class="text-center">Watch a full list of projects at once on my <a href="https://github.com/aly-ning">GitHub</a>
+    </h6>
+    <div class="project-list d-flex align-items-center flex-column">
+      <div class="project-item mt-5 d-flex justify-content-center w-75" v-for="(project, index) in projects"
+        :key="index">
+        <div class="preview-img w-50 shadow ripple" data-mdb-ripple-color="light" data-mdb-ripple-duration="1000ms"
+          @click="toggleOverlay(index)">
+          <img :src="project.img" alt="" class="img-fluid" />
+          <div class="overlay_hover">
+            <h4 class="text px-5 py-3">Highlight</h4>
           </div>
+          <div class="overlay_click text-white" v-show="project.initialOverlay"
+            :class="{ 'fade-in': project.showOverlay}, {'fade-out': !(project.showOverlay)}">
+            <h5>Achievement</h5>
+            <ul>
+              <li v-for="(item, index) in project.accomplishments">
+                {{item}}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="description w-50 p-5">
+          <h4>{{project.title}}</h4>
+          <p>{{project.desc}}</p>
+          <button type="button" class="btn btn-rounded me-3 mt-5" @click="goToGitHub(project.gitHubUrl)">
+            <i class="bi bi-github"></i>
+            <span class="ms-2">GitHub</span>
+          </button>
+          <button type="button" class="btn btn-rounded me-3" @click="goToGitHub(project.pageUrl)"
+            :disabled="!project.pageUrl">
+            <i class="bi bi-house-door-fill"></i>
+            <span class="ms-2">Page</span>
+          </button>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <footer>
@@ -99,6 +145,12 @@
 
   <!-- 引用自己的js -->
   <script src="js/index.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new mdb.Carousel(document.getElementById("skillCarousel"));
+    });
+  </script>
 </body>
 
 </html>

@@ -132,6 +132,10 @@ p {
     color: var(--main-deep-2);
 }
 
+.description>h4 {
+    color: var(--main-deep-3);
+}
+
 /* project 預覽圖hover效果 */
 .overlay_hover {
     position: absolute;
@@ -255,4 +259,50 @@ footer {
     align-items: center;
     height: 45px;
     color: var(--main-light-1);
+}
+
+#skillCarousel {
+    margin-top: 50px;
+    background-color: #263559;
+}
+
+.carousel-item {
+    height: 400px;
+}
+
+#skillCarousel .carousel-caption {
+    bottom: 30%;
+}
+
+.skillsLogo {
+    width: 101px;
+    height: 85px;
+    background-color: #ffffffbc;
+    border: 2px solid var(--main-light-2);
+    border-radius: 5px;
+    padding: 8px;
+    transition: 0.6s;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skillsLogo:hover {
+    background-color: #ffffff;
+}
+
+.skillsLogo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.tooltip-inner {
+    background-color: #000000;
+    color: #FFFFFF;
+    /* font-family: 'Noto Sans TC', sans-serif; */
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
 }
