@@ -15,12 +15,14 @@ body {
 }
 
 .resume {
+    margin-top: 75px;
     background-color: #263559;
 }
 
 .resume>h2 {
     color: var(--main-light-1);
     font-weight: 500;
+    margin: 50px;
 }
 
 .resume>.btn {

@@ -15,7 +15,6 @@
 
   <!-- 引用 MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdb@6.3.1/dist/mdb.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"></script>
 
   <!-- 引用 boostrap icons -->
@@ -29,9 +28,9 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <!-- header -->
-    <div class="header d-flex justify-content-between">
+  <!-- header -->
+  <div class="container-fluid" id="header">
+    <div class="d-flex justify-content-between no-shadow">
       <h3>Aly ‧ Portfolio</h3>
       <div class="navbar-nav flex-row">
         <div class="nav-item me-5">
@@ -43,10 +42,17 @@
           <a class="nav-link" href="page/resume.html">About</a>
         </div>
         <div class="nav-item me-5">
+          <a class="nav-link" href="#skillCarousel">skills</a>
+        </div>
+        <div class="nav-item me-5">
           <a class="nav-link" href="#project">Project</a>
         </div>
       </div>
     </div>
+  </div>
+
+
+  <div class="container-fluid">
     <!-- index -->
     <div class="index_main d-flex justify-content-center align-items-center flex-column text-center">
       <h1 class="text-white">I am <span>Aly Lin</span></h1>
@@ -136,7 +142,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <footer>

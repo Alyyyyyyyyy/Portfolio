@@ -54,16 +54,32 @@ p {
 }
 
 /* 首頁的header */
-.header {
-    background-color: var(--main-deep-1);
+#header>div {
+    /* background-color: var(--main-deep-1); */
+    background-color: var(--main-deep-2);
     color: var(--white);
     padding: 15px;
     padding-left: 5%;
     padding-right: 5%;
+    box-shadow: 0px 5px 20px 0px #9aa4bbca;
+    transition-duration: 0.4s;
+
 }
 
-.header .nav-link {
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+#header>div .nav-link {
     color: var(--white);
+}
+
+#header>div.no-shadow {
+    box-shadow: none;
 }
 
 /* 首頁的主視覺畫面 */
@@ -280,7 +296,7 @@ footer {
     background-color: #ffffffbc;
     border: 2px solid var(--main-light-2);
     border-radius: 5px;
-    padding: 8px;
+    padding: 10px;
     transition: 0.6s;
     overflow: hidden;
     display: flex;
@@ -296,6 +312,11 @@ footer {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transition-duration: 0.6s;
+}
+
+.skillsLogo:hover img {
+    scale: 1.2;
 }
 
 .tooltip-inner {

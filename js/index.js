@@ -102,3 +102,17 @@ const skill = Vue.createApp({
     this.initTooltips();
   },
 }).mount("#vueCarouselInner");
+
+// 監聽網頁滾動事件，header加陰影
+var header = document.querySelector("#header>div");
+window.addEventListener("scroll", function () {
+  // 獲取目前的滾動位置
+  var scrollTop = window.scrollY;
+
+  // 如果滾動位置為0，新增陰影class；否則移除陰影class
+  if (scrollTop === 0) {
+    header.classList.add("no-shadow");
+  } else {
+    header.classList.remove("no-shadow");
+  }
+});
